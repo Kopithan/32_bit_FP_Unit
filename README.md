@@ -1,140 +1,142 @@
-# 32-bit Floating Point Arithmetic Unit (IEEE 754 Single Precision)
+# 32-bit Floating Point Arithmetic Unit
 
-This repository contains a configurable 32-bit floating point arithmetic unit (FPU) implemented in SystemVerilog. The design follows IEEE 754 single-precision format and supports the four core arithmetic operations:
+![IEEE 754](https://img.shields.io/badge/Standard-IEEE%20754%20Single%20Precision-0EA5E9?style=for-the-badge)
+![Language](https://img.shields.io/badge/RTL-SystemVerilog-14B8A6?style=for-the-badge)
+![Ops](https://img.shields.io/badge/Operations-Add%20%7C%20Sub%20%7C%20Mul%20%7C%20Div-F59E0B?style=for-the-badge)
+![FPGA](https://img.shields.io/badge/Target-Cyclone%20IV%20E-22C55E?style=for-the-badge)
 
-- Addition
-- Subtraction
-- Multiplication
-- Division
+This repository contains a configurable 32-bit floating point arithmetic unit (FPU) implemented in SystemVerilog. The design follows IEEE 754 single-precision format and supports the four fundamental arithmetic operations.
 
-The implementation was developed for EN3021 Digital System Design and validated through simulation and FPGA synthesis.
+## Snapshot
 
-## IEEE 754 Format
+| Item | Value |
+|---|---|
+| Precision | 32-bit IEEE 754 single precision |
+| Sign / Exponent / Mantissa | 1 / 8 / 23 |
+| Core operations | Addition, Subtraction, Multiplication, Division |
+| Design approach | Module-based FSM pipeline |
+| Validation | Simulation + FPGA implementation summary |
 
-The datapath uses standard single precision fields:
+## IEEE 754 Coverage
+
+The datapath uses standard single-precision fields:
 
 - 1 sign bit
 - 8 exponent bits
 - 23 mantissa bits
 
-The design handles special values and edge cases including:
+Handled special classes and edge cases:
 
 - Zero
 - Infinity
 - NaN
 - Denormalized values
-- Sign combinations (+/-)
+- Positive/negative sign combinations
 
-## Top-Level Architecture
+## Architecture
 
-The arithmetic unit is organized around a top-level controller that routes operands to operation-specific modules:
+Top-level orchestration is handled by fpu_sp_top.sv, which routes commands and operands to dedicated operation modules:
 
-- `fpu_sp_add.sv`
-- `fpu_sp_sub.sv`
-- `fpu_sp_mul.sv`
-- `fpu_sp_div.sv`
-- `fpu_sp_top.sv`
+- fpu_sp_add.sv
+- fpu_sp_sub.sv
+- fpu_sp_mul.sv
+- fpu_sp_div.sv
 
-A command interface selects operation mode:
+Command map:
 
-- `0001`: Add
-- `0010`: Subtract
-- `0011`: Multiply
-- `0100`: Divide
+| Command | Operation |
+|---|---|
+| 0001 | Addition |
+| 0010 | Subtraction |
+| 0011 | Multiplication |
+| 0100 | Division |
 
-Each operation module is implemented as a finite state machine (FSM) and follows a staged floating-point flow:
+Common floating-point processing stages:
 
 1. Unpack fields
 2. Align/process mantissas and exponents
 3. Normalize
 4. Round (round-to-nearest-even)
-5. Pack output
+5. Pack result
 
-## Module Notes
+## Module Highlights
 
-### Addition (`fpu_sp_add.sv`)
+### Addition: fpu_sp_add.sv
 
 - Exponent alignment with shifted mantissa handling
-- Guard/sticky-aware precision flow
-- Handles effective add/subtract based on signs
+- Guard/sticky-aware precision behavior
+- Correct sign-aware effective add/subtract flow
 
-### Subtraction (`fpu_sp_sub.sv`)
+### Subtraction: fpu_sp_sub.sv
 
-- Uses sign-inversion strategy with shared add-style processing
-- Supports special-case behavior and normalization
+- Sign inversion strategy over an add-style path
+- Proper normalization and special-case handling
 
-### Multiplication (`fpu_sp_mul.sv`)
+### Multiplication: fpu_sp_mul.sv
 
-- 24x24 mantissa product path (48-bit intermediate)
+- 24x24 mantissa multiply path (48-bit intermediate)
 - Exponent bias correction and sign XOR
-- Guard/round/sticky extraction before packing
+- Guard/round/sticky extraction prior to packing
 
-### Division (`fpu_sp_div.sv`)
+### Division: fpu_sp_div.sv
 
-- Iterative non-restoring division style flow
+- Iterative non-restoring division style implementation
 - Quotient/remainder tracking and exponent correction
-- Divide-by-zero and infinity/NaN handling
+- Divide-by-zero and infinity/NaN behavior support
 
 ## Verification Summary
 
-Simulation was run with comprehensive testcases covering:
+Simulation was executed with testcases covering:
 
 - Basic arithmetic correctness
 - Sign combinations
-- Zero, infinity, NaN behavior
+- Zero, infinity, and NaN behavior
 - Denormal and boundary-style inputs
 
-Observed outcome from report notes:
+Report-based outcome:
 
-- All six SystemVerilog design/test files compiled successfully
-- Arithmetic modules produced correct results for standard and special-case tests
-- One non-standard rounding discrepancy was identified for future refinement
+- All six SystemVerilog files compiled successfully
+- Arithmetic modules produced expected outputs for standard and special-case tests
+- One non-standard rounding discrepancy was noted for further refinement
 
-## FPGA Implementation (Report Summary)
+## FPGA Implementation Summary
 
-Target platform in project report: Altera Cyclone IV E.
+Target platform from report notes: Altera Cyclone IV E.
 
-Reported synthesis/place-and-route highlights:
+| Resource | Usage |
+|---|---|
+| Logic elements | 2,184 / 22,320 (~10%) |
+| Registers | 1,013 |
+| Embedded 9-bit multipliers | 7 / 132 (~5%) |
+| Memory bits | 0 / 608,256 |
+| Pins | 15 / 154 (~10%) |
+| Max operating frequency | 100.72 MHz |
+| Target clock | 50 MHz |
 
-- Logic elements: 2,184 / 22,320 (~10%)
-- Registers: 1,013
-- Embedded 9-bit multipliers: 7 / 132 (~5%)
-- Memory bits: 0 / 608,256
-- Pins: 15 / 154 (~10%)
-- Max operating frequency: 100.72 MHz
-- Target operating clock: 50 MHz
+The timing margin indicates stable operation at target frequency with room for extensions.
 
-This indicates comfortable timing margin and room for additional features.
+## Key Project Assets
 
-## Project Files
-
-Primary hardware and project files in this repo include:
-
-- Quartus project files (`*.qpf`, `*.qsf`, `*.qws`)
-- FPU RTL modules (`fpu_sp_*.sv`)
-- Top-level and board integration files
+- Quartus project files: *.qpf, *.qsf, *.qws
+- FPU RTL modules: fpu_sp_*.sv
 - Qsys/IP integration files
-- Simulation configuration and artifacts
-- Report document (`DSD_Individual.pdf`)
+- Simulation setup and artifacts
+- Design report: DSD_Individual.pdf
 
-## Build and Simulation
-
-Typical Quartus/ModelSim flow:
+## Build and Simulation Flow
 
 1. Open the Quartus project file.
 2. Compile the design.
-3. Launch simulation using the provided simulation setup.
-4. Run testbench cases and inspect result waveforms/logs.
+3. Launch simulation from the provided simulation setup.
+4. Run testbench cases and inspect logs/waveforms.
 
 ## Future Improvements
 
-Based on report discussion:
-
 - Add IEEE 754 exception flags (overflow, underflow, invalid, inexact, divide-by-zero)
-- Add support for additional rounding modes
+- Add additional IEEE rounding modes
 - Add fused multiply-add (FMA)
-- Optimize divide latency (for example SRT/Newton-Raphson variants)
-- Extend to double precision
+- Reduce divide latency (for example SRT or Newton-Raphson variants)
+- Extend to double precision support
 
 ## Author
 
