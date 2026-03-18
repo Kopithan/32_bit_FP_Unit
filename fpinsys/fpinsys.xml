@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.12.27.12:59:01"
+ outputDirectory="C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fpinsys/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone IV E"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="EP4CE22F17C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="probes" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="probe" direction="input" role="probe" width="32" />
+  </interface>
+  <interface name="sources" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="source" direction="output" role="source" width="66" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="fpinsys:1.0:AUTO_DEVICE=EP4CE22F17C6,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1766820539,AUTO_UNIQUE_ID=(altera_in_system_sources_probes:22.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=32,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=66)"
+   instancePathKey="fpinsys"
+   kind="fpinsys"
+   version="1.0"
+   name="fpinsys">
+  <parameter name="AUTO_GENERATION_ID" value="1766820539" />
+  <parameter name="AUTO_DEVICE" value="EP4CE22F17C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fpinsys/synthesis/fpinsys.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fpinsys/synthesis/submodules/altsource_probe_top.v"
+       type="VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fpinsys.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/quartus222/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="fpinsys">queue size: 0 starting:fpinsys "fpinsys"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="fpinsys"><![CDATA["<b>fpinsys</b>" reuses <b>altera_in_system_sources_probes</b> "<b>submodules/altsource_probe_top</b>"]]></message>
+   <message level="Debug" culprit="fpinsys">queue size: 0 starting:altera_in_system_sources_probes "submodules/altsource_probe_top"</message>
+   <message level="Info" culprit="in_system_sources_probes_0"><![CDATA["<b>fpinsys</b>" instantiated <b>altera_in_system_sources_probes</b> "<b>in_system_sources_probes_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_in_system_sources_probes:22.1:create_source_clock=false,create_source_clock_enable=false,device_family=Cyclone IV E,enable_metastability=NO,gui_use_auto_index=true,instance_id=NONE,probe_width=32,sld_auto_instance_index=YES,sld_instance_index=0,source_initial_value=0,source_width=66"
+   instancePathKey="fpinsys:.:in_system_sources_probes_0"
+   kind="altera_in_system_sources_probes"
+   version="22.1"
+   name="altsource_probe_top">
+  <parameter name="create_source_clock" value="false" />
+  <parameter name="instance_id" value="NONE" />
+  <parameter name="source_initial_value" value="0" />
+  <parameter name="sld_auto_instance_index" value="YES" />
+  <parameter name="sld_instance_index" value="0" />
+  <parameter name="probe_width" value="32" />
+  <parameter name="source_width" value="66" />
+  <parameter name="create_source_clock_enable" value="false" />
+  <parameter name="device_family" value="Cyclone IV E" />
+  <parameter name="enable_metastability" value="NO" />
+  <parameter name="gui_use_auto_index" value="true" />
+  <generatedFiles>
+   <file
+       path="C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fpinsys/synthesis/submodules/altsource_probe_top.v"
+       type="VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/quartus222/ip/altera/sld/jtag/altera_in_system_sources_probes/altera_in_system_sources_probes_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="fpinsys" as="in_system_sources_probes_0" />
+  <messages>
+   <message level="Debug" culprit="fpinsys">queue size: 0 starting:altera_in_system_sources_probes "submodules/altsource_probe_top"</message>
+   <message level="Info" culprit="in_system_sources_probes_0"><![CDATA["<b>fpinsys</b>" instantiated <b>altera_in_system_sources_probes</b> "<b>in_system_sources_probes_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

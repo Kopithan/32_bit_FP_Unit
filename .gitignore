@@ -1,0 +1,26 @@
+# Quartus generated databases and outputs
+db/
+incremental_db/
+output_files/
+
+# Qsys/IP generated synthesis outputs
+fpinsys/synthesis/
+
+# ModelSim/Questa generated simulation artifacts
+work/
+transcript
+vsim.wlf
+msim_transcript
+simulation/modelsim/verilog_libs/
+simulation/modelsim/*.svo
+simulation/modelsim/*.xrf
+
+# Editor and OS files
+*.log
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+
+# Local backup files
+*.bak

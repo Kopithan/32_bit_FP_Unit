@@ -1,0 +1,271 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/samko/Desktop/seme5/verilogo/FP_unit_/simulation/modelsim
+vcla
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1766766190
+!i10b 1
+!s100 W35if57:EQKd^=T>6FbBX2
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IGdE1_9fcneNaP5Lz:LSXL3
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1766766036
+Z6 8C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/cla.sv
+Z7 FC:/Users/samko/Desktop/seme5/verilogo/FP_unit_/cla.sv
+!i122 0
+L0 7 21
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1766766190.000000
+Z10 !s107 C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/cla.sv|
+Z11 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/samko/Desktop/seme5/verilogo/FP_unit_|C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/cla.sv|
+!i113 1
+Z12 o-sv -work work
+Z13 !s92 -sv -work work +incdir+C:/Users/samko/Desktop/seme5/verilogo/FP_unit_
+Z14 tCvgOpt 0
+vcla_add
+R1
+R2
+!i10b 1
+!s100 E2]@N]?Y7Y3dfSFQbaWKA2
+R3
+IhbE`QM2ggD4TH0ee[NJ7b3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 63 26
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vdivider
+R1
+R2
+!i10b 1
+!s100 OMkKH;zcD7Vbm7nKmVL?>0
+R3
+IRYED<m9XDMA6e0c=F8Nkc3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 107 53
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vfp_unit
+R1
+R2
+!i10b 1
+!s100 RRa=acNEOgnAZ;kkzI90R3
+R3
+I@;GBknBI6iAa5[mFaPI6O3
+R4
+S1
+R0
+w1766765689
+8C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fp_unit.sv
+FC:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fp_unit.sv
+!i122 1
+L0 9 231
+R8
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fp_unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/samko/Desktop/seme5/verilogo/FP_unit_|C:/Users/samko/Desktop/seme5/verilogo/FP_unit_/fp_unit.sv|
+!i113 1
+R12
+R13
+R14
+vha
+R1
+R2
+!i10b 1
+!s100 6z^TF1eBkJ;j:LDcJJ2o?3
+R3
+Ibo<]b=jT=6>hE@P?FV8T]0
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 30 9
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vhcla
+R1
+R2
+!i10b 1
+!s100 HCL=e9e=64o=jKa9LPXO22
+R3
+IQ2g^9iSXgZM:N<K655cZX2
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 41 17
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vmultiplier
+R1
+R2
+!i10b 1
+!s100 K9iNlRVbL7SDZoUHQjY0R3
+R3
+IWF:YVW_hHfGEcKJW1WS3H2
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 230 7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vnormal
+R1
+R2
+!i10b 1
+!s100 e5fEfi>ZicOBhF?]SbKGg0
+R3
+I]1>41bXh5>^4N;5=UaS6J1
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 162 43
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vshifter
+R1
+R2
+!i10b 1
+!s100 ZS66QJZHnzJmOW?bK5GC32
+R3
+I=A`BGDzZKB4L1AW5ff7?12
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 207 20
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
+vtwos_cla
+R1
+R2
+!i10b 1
+!s100 9_oj09NNC6>01i1a?zC312
+R3
+IjlncoO>^bla><;06Z1n3k3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 91 14
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 1
+R12
+R13
+R14
