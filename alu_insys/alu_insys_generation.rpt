@@ -1,0 +1,28 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate C:\Users\samko\Downloads\fpu_final_10_board\alu_insys.qsys --block-symbol-file --output-directory=C:\Users\samko\Downloads\fpu_final_10_board\alu_insys --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading fpu_final_10_board/alu_insys.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 22.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate C:\Users\samko\Downloads\fpu_final_10_board\alu_insys.qsys --synthesis=VERILOG --output-directory=C:\Users\samko\Downloads\fpu_final_10_board\alu_insys\synthesis --family="Cyclone IV E" --part=EP4CE22F17C6
+Progress: Loading fpu_final_10_board/alu_insys.qsys
+Progress: Reading input file
+Progress: Adding in_system_sources_probes_0 [altera_in_system_sources_probes 22.1]
+Progress: Parameterizing module in_system_sources_probes_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: alu_insys: Generating alu_insys "alu_insys" for QUARTUS_SYNTH
+Info: in_system_sources_probes_0: "alu_insys" instantiated altera_in_system_sources_probes "in_system_sources_probes_0"
+Info: alu_insys: Done "alu_insys" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
