@@ -1,0 +1,7 @@
+	component alu_insys is
+		port (
+			probe  : in  std_logic_vector(68 downto 0) := (others => 'X'); -- probe
+			source : out std_logic_vector(32 downto 0)                     -- source
+		);
+	end component alu_insys;
+
